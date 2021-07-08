@@ -2,12 +2,25 @@ Calculator = {
 
    calculate: (num1, num2, operation) => {
 
+      let result;
+      switch (operation) {
+         case '+':
+            result = Calculator.sum(num1,num2);
+            break;
+         case '-':
+            result = Calculator.sub(num1, num2);
+            break;
 
-      if(operation === '+') {
-         return Calculator.sum(num1, num2);
-      } else if(operation === '/') {
-         return Calculator.div(num1, num2);
+         case 'x':
+            result = Calculator.multi(num1, num2);
+            break;
+
+         case '/':
+            result = Calculator.div(num1, num2);
+            break;
       }
+      
+      return result;
 
    },
 
@@ -15,12 +28,12 @@ Calculator = {
       return num1+num2;
    },
 
-   sub: () => {
-
+   sub: (num1, num2) => {
+      return num1-num2;
    },
 
-   multi: () => {
-
+   multi: (num1, num2) => {
+      return num1*num2;
    },
 
    div: (num1, num2) => {
